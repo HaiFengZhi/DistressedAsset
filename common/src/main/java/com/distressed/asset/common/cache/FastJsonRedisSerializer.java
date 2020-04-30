@@ -29,7 +29,7 @@ public class FastJsonRedisSerializer<T> implements RedisSerializer<T> {
     static {
         ParserConfig.getGlobalInstance().setAutoTypeSupport(true);
         //如果遇到反序列化autoType is not support错误，请添加并修改一下包名到bean文件路径
-         ParserConfig.getGlobalInstance().addAccept("com.online.shop");
+         ParserConfig.getGlobalInstance().addAccept("com.distressed.asset");
     }
     public FastJsonRedisSerializer(Class<T> clazz) {
         super();

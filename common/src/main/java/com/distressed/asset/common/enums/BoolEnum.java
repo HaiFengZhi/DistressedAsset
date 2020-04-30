@@ -34,7 +34,7 @@ public enum BoolEnum {
      *
      * @param
      *    @param key
-     * @return com.online.shop.common.enums.BoolEnum
+     * @return com.distressed.asset.common.enums.BoolEnum
      * @author wayne.yan
      * @data 2019/11/14
      */

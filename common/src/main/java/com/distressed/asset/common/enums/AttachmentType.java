@@ -11,10 +11,10 @@ public enum AttachmentType {
     JPG, PNG, GIF, BMP, PDF, DOC, DOCX, XLS, XLSX, TXT, VIDEO, UNKNOWN;
 
     /**
-     * 通过类型名称创建{@link com.online.shop.common.enums.AttachmentType}类型。
+     * 通过类型名称创建{@link com.distressed.asset.common.enums.AttachmentType}类型。
      *
      * @param type 类型名称，必须是JPG, PNG, GIF, BMP, PDF, DOC, DOCX, XLS, XLSX, TXT, UNKNOWN其中之一。
-     * @return {@link com.online.shop.common.enums.AttachmentType}类型。
+     * @return {@link com.distressed.asset.common.enums.AttachmentType}类型。
      */
     public static AttachmentType create(String type) {
         type = (type == null) ? "UNKNOWN" : type.trim().toUpperCase();

@@ -33,7 +33,7 @@ public enum SexEnum {
      *
      * @param 
      *    @param key
-     * @return com.online.shop.common.enums.SexEnum
+     * @return com.distressed.asset.common.enums.SexEnum
      * @author wayne.yan
      * @data 2019/11/14       
      */

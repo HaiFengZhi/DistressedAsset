@@ -38,10 +38,10 @@ public class WSResultBean<T> {
     private T data;
 
     /**
-     * 通过{@link com.online.shop.common.result.WSResultBean#message}构建{@link com.online.shop.common.result.WSResultBean}。
+     * 通过{@link com.distressed.asset.common.result.WSResultBean#message}构建{@link com.distressed.asset.common.result.WSResultBean}。
      *
      * @param message 返回信息。
-     * @return {@link com.online.shop.common.result.WSResultBean}。
+     * @return {@link com.distressed.asset.common.result.WSResultBean}。
      */
     public static <T> WSResultBean<T> failed(String message) {
         WSResultBean result = new WSResultBean();
@@ -55,7 +55,7 @@ public class WSResultBean<T> {
     /**
      * 构建成功响应的{@link WSResultBean}对象。
      *
-     * @return {@link com.online.shop.common.result.WSResultBean}。
+     * @return {@link com.distressed.asset.common.result.WSResultBean}。
      */
     public static <T> WSResultBean<T> success() {
         WSResultBean result = new WSResultBean();
@@ -67,10 +67,10 @@ public class WSResultBean<T> {
     }
 
     /**
-     * 通过{@link com.online.shop.common.result.WSResultBean#message}构建成功响应的{@link WSResultBean}对象。
+     * 通过{@link com.distressed.asset.common.result.WSResultBean#message}构建成功响应的{@link WSResultBean}对象。
      *
      * @param message 返回信息。
-     * @return {@link com.online.shop.common.result.WSResultBean}。
+     * @return {@link com.distressed.asset.common.result.WSResultBean}。
      */
     public static <T> WSResultBean<T> success(String message) {
         WSResultBean result = new WSResultBean();
@@ -82,10 +82,10 @@ public class WSResultBean<T> {
     }
 
     /**
-     * 通过{@link com.online.shop.common.result.WSResultBean#data}构建成功响应的{@link WSResultBean}对象。
+     * 通过{@link com.distressed.asset.common.result.WSResultBean#data}构建成功响应的{@link WSResultBean}对象。
      *
      * @param data 返回数据。
-     * @return {@link com.online.shop.common.result.WSResultBean}。
+     * @return {@link com.distressed.asset.common.result.WSResultBean}。
      */
     public static <T> WSResultBean<T> successForData(T data) {
         WSResultBean<T> result = new WSResultBean<T>();
