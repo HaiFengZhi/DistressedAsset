@@ -21,7 +21,7 @@
         zipkin-server：服务链路跟踪中心
         gateway-server：网关服务配置中心
         scheduler-server：定时任务配置中心
-        api：全站API接口服务层
+        api-parent：全站API接口服务层
         web：全站控制访问层
         xxl-job-admin:定时任务管理中心
     </description>
@@ -30,6 +30,8 @@
         <module>eureka-server</module>
         <module>common</module>
         <module>xxl-job-admin</module>
+        <module>scheduler-server</module>
+        <module>api-parent</module>
     </modules>
 
     <properties>

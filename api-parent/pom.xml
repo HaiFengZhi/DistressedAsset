@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>asset-parent</artifactId>
+        <groupId>com.distressed.asset</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>api-parent</artifactId>
+    <packaging>pom</packaging>
+    <description>
+        对内提供的服务接口，分为以下模块：
+        api-common：模块内共用工具包、
+        portal-client：普通业务可依赖jar包、
+        portal-service：普通业务实现接口、
+        fund-client：资金业务可依赖jar包、
+        fund-service：资金业务实现接口、
+        transaction-client：交易业务可依赖jar包、
+        transaction-service：交易业务实现接口。
+    </description>
+
+    <dependencies>
+        <!--Spring Boot Web组件-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!--使单元测试不影响项目的编译-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip><!--跳过单元测试-->
+                    <!--<testFailureIgnore>true</testFailureIgnore>--><!--这个网上很多的解决方式是这个,其实这个,其实这个配置后打包还是会编译单元测试类的,只是忽略编译单元测试类的错误.-->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
