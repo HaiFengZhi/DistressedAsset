@@ -150,4 +150,42 @@
       status = #{status,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, name, access_url, parent_id, description, level, show_or, sequence, main_permissions_or,
+    status
+    from admin_base_resource
+    ORDER BY parent_id ASC,level ASC,sequence ASC
+  </select>
+
+  <select id="selectBy" resultMap="BaseResultMap">
+    select id, name, access_url, parent_id, description, level, show_or, sequence, main_permissions_or,
+    status
+    from admin_base_resource
+    where status = 0
+    <if test="params.name!=null and params.name !=''">
+      and name like '%${params.name}%'
+    </if>
+    ORDER BY parent_id ASC,level ASC,sequence ASC
+  </select>
+
+  <select id="selectMenuList" resultMap="BaseResultMap">
+        select * from admin_base_resource where `level` !=2 and show_or = 1 and status = 0
+    </select>
+
+  <select id="selectByParentId" resultMap="BaseResultMap">
+    select * from admin_base_resource where parent_id = #{parentId} ORDER BY sequence
+  </select>
+
+  <select id="selectByIds" resultMap="BaseResultMap">
+    select * from admin_base_resource where id in
+    <foreach collection="ids" item="id" open="(" separator="," close=")">
+      #{id}
+    </foreach>
+    <if test="null != parentId ">
+      and parent_id = #{parentId}
+    </if>
+    ORDER BY sequence
+  </select>
+  
 </mapper>

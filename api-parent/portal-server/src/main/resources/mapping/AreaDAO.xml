@@ -101,4 +101,13 @@
       status = #{status,jdbcType=INTEGER}
     where code = #{code,jdbcType=VARCHAR}
   </update>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select code, name, parent_code, root, zone, status
+    from t_area
+  </select>
+
+  <select id="selectByParentCode" resultMap="BaseResultMap">
+    select code, name, parent_code, root, zone, status from t_area where parent_code = #{code}
+  </select>
 </mapper>

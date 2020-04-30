@@ -185,4 +185,28 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, user_id, model, uuid, upload_time, original_filename, file_size, access_path, actual_path,
+    description, type, status,update_time
+    from t_attachment where status=0
+  </select>
+
+  <select id="selectByUuid" resultMap="BaseResultMap">
+    select id, user_id, model, uuid, upload_time, original_filename, file_size, access_path, actual_path,
+    description, type, status
+    from t_attachment
+    where uuid = #{uuid,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectPass" resultMap="BaseResultMap">
+    select id, user_id, model, uuid, upload_time, original_filename, file_size, access_path, actual_path,
+    description, type, status,update_time
+    from t_attachment where status=1 and DATE(update_time) &lt; DATE(DATE_SUB(NOW(),INTERVAL 30 day))
+  </select>
+
+  <delete id="deletePass" parameterType="java.lang.Long">
+    delete from t_attachment where id=#{id,jdbcType=BIGINT}
+  </delete>
+
 </mapper>

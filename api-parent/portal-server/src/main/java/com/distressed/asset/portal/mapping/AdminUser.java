@@ -63,7 +63,7 @@ public class AdminUser implements Serializable {
     /**
      * 状态:1-启用 0-禁用
      */
-    private Byte status;
+    private Boolean status;
 
     /**
      * 绑定手机
@@ -233,7 +233,7 @@ public class AdminUser implements Serializable {
      * 状态:1-启用 0-禁用
      * @return status 状态:1-启用 0-禁用
      */
-    public Byte getStatus() {
+    public Boolean getStatus() {
         return status;
     }
 
@@ -241,7 +241,7 @@ public class AdminUser implements Serializable {
      * 状态:1-启用 0-禁用
      * @param status 状态:1-启用 0-禁用
      */
-    public void setStatus(Byte status) {
+    public void setStatus(Boolean status) {
         this.status = status;
     }
 

@@ -47,7 +47,7 @@ public class BaseResource implements Serializable {
     /**
      * 是否作为菜单显示？0不显示 1显示
      */
-    private Byte showOr;
+    private Boolean showOr;
 
     /**
      * 菜单排序值
@@ -57,7 +57,7 @@ public class BaseResource implements Serializable {
     /**
      * 是否为主权限，0=否，1=是
      */
-    private Byte mainPermissionsOr;
+    private Boolean mainPermissionsOr;
 
     /**
      * 是否激活，0-有效，-1-失效
@@ -169,7 +169,7 @@ public class BaseResource implements Serializable {
      * 是否作为菜单显示？0不显示 1显示
      * @return show_or 是否作为菜单显示？0不显示 1显示
      */
-    public Byte getShowOr() {
+    public Boolean getShowOr() {
         return showOr;
     }
 
@@ -177,7 +177,7 @@ public class BaseResource implements Serializable {
      * 是否作为菜单显示？0不显示 1显示
      * @param showOr 是否作为菜单显示？0不显示 1显示
      */
-    public void setShowOr(Byte showOr) {
+    public void setShowOr(Boolean showOr) {
         this.showOr = showOr;
     }
 
@@ -201,7 +201,7 @@ public class BaseResource implements Serializable {
      * 是否为主权限，0=否，1=是
      * @return main_permissions_or 是否为主权限，0=否，1=是
      */
-    public Byte getMainPermissionsOr() {
+    public Boolean getMainPermissionsOr() {
         return mainPermissionsOr;
     }
 
@@ -209,7 +209,7 @@ public class BaseResource implements Serializable {
      * 是否为主权限，0=否，1=是
      * @param mainPermissionsOr 是否为主权限，0=否，1=是
      */
-    public void setMainPermissionsOr(Byte mainPermissionsOr) {
+    public void setMainPermissionsOr(Boolean mainPermissionsOr) {
         this.mainPermissionsOr = mainPermissionsOr;
     }
 

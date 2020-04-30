@@ -185,4 +185,52 @@
       modify_pwd_or = #{modifyPwdOr,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, login_username, nickname, password, security_password, portrait, create_time,
+    last_login_time, type, status, bound_cellphone, bound_email, modify_pwd_or
+    from os_admin_user
+  </select>
+
+  <update id="generatePwd">
+    update os_admin_user set password = #{password},modify_pwd_or = #{modifyPwdOr} where id = #{id}
+  </update>
+
+  <select id="selectBy" resultMap="BaseResultMap">
+    select id, login_username, nickname, password, security_password, portrait, create_time,
+    last_login_time, type, status, bound_cellphone, bound_email, modify_pwd_or
+    from os_admin_user
+    <where>
+      <if test="params.loginUsername!=null and params.loginUsername !=''">
+        login_username like '%${params.loginUsername}%'
+      </if>
+      <if test="params.nickname!=null and params.nickname !=''">
+        and nickname like '%${params.nickname}%'
+      </if>
+      <if test="params.boundCellphone!=null and params.boundCellphone !=''">
+        and bound_cellphone like '%${params.boundCellphone}%'
+      </if>
+      <if test="params.boundEmail!=null and params.boundEmail !=''">
+        and bound_email like '%${params.boundEmail}%'
+      </if>
+      <if test="params.status!=null and params.status !=''">
+        and status = #{params.status}
+      </if>
+    </where>
+  </select>
+
+  <select id="selectByLoginName" resultMap="BaseResultMap">
+    select * from os_admin_user where login_username = #{loginUsername}
+  </select>
+
+  <select id="selectLogin" resultMap="BaseResultMap">
+    select * from os_admin_user where login_username = #{loginUsername} and password = #{password}
+  </select>
+
+  <select id="selectByIds" resultMap="BaseResultMap">
+    select * from os_admin_user where id in
+    <foreach collection="ids" item="id" open="(" separator="," close=")">
+      #{id}
+    </foreach>
+  </select>
+
 </mapper>

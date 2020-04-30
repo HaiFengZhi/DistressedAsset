@@ -1,0 +1,160 @@
+
+.layui-nav-img-m {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%
+}
+
+.layui-nav-img-l {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    border-radius: 50%
+}
+
+.layui-btn-width-sm-80{
+    min-width: 80px;
+}
+
+.layui-btn-width-normal-100{
+    min-width: 100px;
+}
+
+.layui-btn-width-lg-120{
+    min-width: 120px;
+}
+
+.layui-input-height-sm-30{
+    height: 30px;
+}
+
+.layui-input-height-normal-38{
+    height: 38px;
+}
+
+.layui-input-height-lg-44{
+    height: 44px;
+}
+
+.layui-margin-right-10{
+    margin-right: 10px;
+}
+
+.layui-product-img-xs {
+    width: 80px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.layui-product-img-xss {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.layui-table-cell-auto {
+    height: auto;
+    overflow: visible;
+    text-overflow: inherit;
+    /*white-space: normal;*/
+    font-size: 10px;
+}
+
+/*后台首页*/
+.panel_box{ margin-bottom:5px;}
+.panel{ text-align:center; height:90px;}
+.panel_box a{display:block; border-radius:5px; overflow:hidden; height:80px; background-color:#f2f2f2 !important; }
+.panel_icon{ width:40%; display: inline-block; line-height:80px; float:left; position:relative; height:100%;}
+.panel_icon i{ font-size:40px !important; color:#fff; display: inline-block;}
+.panel_word{ width:60%; display: inline-block; float:right; margin:13px 0 14px; }
+.panel_word span{ font-size:25px; display:block; height:34px; }
+.panel .loginTime{ font-size:15px; color:#1E9FFF; line-height:17px;}
+.panel em{ font-style:normal;}
+.history_box{ min-height:500px; height:500px; overflow-y:scroll; padding:10px !important;}
+.history_box .layui-timeline .layui-timeline-item:last-child{ padding-bottom:0;}
+
+/*layer.open弹窗样式*/
+body .demo-class .layui-layer-title{background:#4476A7; color:#fff; border: none;}
+body .demo-class .layui-layer-content{background-color:whitesmoke; position: relative;}
+body .demo-class .layui-layer-btn{border-top:1px solid #E9E7E7}
+body .demo-class .layui-layer-btn a{background:#333;}
+body .demo-class .layui-layer-btn .layui-layer-btn1{background:#999;}
+
+
+/**后台表头搜索条件样式**/
+/*用于让Div自动换行*/
+/*body .search-demo .layui-form-item .layui-inline div{width: 30%}*/
+body .search-demo .layui-form-item .layui-inline input{height: 32px;}
+body .search-demo .layui-form-item .layui-inline-select {width: 352px;}
+body .search-demo .layui-form-item .layui-inline-simple-select {float: left; width: 182px; margin-right: 10px}
+body .search-demo .layui-form-item .layui-inline-btn {margin-left: 60px;}
+
+/*设置字体颜色*/
+.layui-color-blue{color: #01AAED !important}
+.layui-color-red{color: #f00 !important; font-weight: bold;}
+
+/**后台修改头像框 */
+.avatar-add {
+    position: relative;
+    width: 373px;
+    height: 373px;
+    background-color: #F2F2F5;
+}
+
+/**添加了一个禁用时背景为灰 */
+form input.layui-input[disabled] {
+    background: #f2f2f2;
+    color: #595963 !important;
+}
+
+.layui-select-disabled .layui-disabled {
+    background: #f2f2f2;
+    color: #595963 !important;
+}
+
+/**添加基本颜色配置 */
+
+.layui-red {
+    color: #FF5722 !important
+}
+
+.layui-orange {
+    color: #FFB800 !important
+}
+
+.layui-green {
+    color: #009688 !important
+}
+
+.layui-cyan {
+    color: #2F4056 !important
+}
+
+.layui-blue {
+    color: #1E9FFF !important
+}
+
+.layui-black {
+    color: #393D49 !important
+}
+
+.layui-gray {
+    color: #999 !important
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -38,7 +38,7 @@ public class Role implements Serializable {
     /**
      * 角色的状态: ‘1’有效；‘0’无效
      */
-    private Byte status;
+    private Boolean status;
 
     /**
      * admin_role
@@ -113,7 +113,7 @@ public class Role implements Serializable {
      * 角色的状态: ‘1’有效；‘0’无效
      * @return status 角色的状态: ‘1’有效；‘0’无效
      */
-    public Byte getStatus() {
+    public Boolean getStatus() {
         return status;
     }
 
@@ -121,7 +121,7 @@ public class Role implements Serializable {
      * 角色的状态: ‘1’有效；‘0’无效
      * @param status 角色的状态: ‘1’有效；‘0’无效
      */
-    public void setStatus(Byte status) {
+    public void setStatus(Boolean status) {
         this.status = status;
     }
 

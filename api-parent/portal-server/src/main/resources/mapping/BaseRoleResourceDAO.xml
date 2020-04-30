@@ -33,4 +33,42 @@
       </if>
     </trim>
   </insert>
+
+  <insert id="insertBatch">
+    INSERT INTO admin_base_role_resource (role_id, resource_id) VALUES
+    <foreach collection="dataList" item="data" separator=",">
+      (#{data.roleId},#{data.resourceId})
+    </foreach>
+  </insert>
+
+  <delete id="deleteByRoleId">
+    delete from admin_base_role_resource where role_id = #{roleId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByResourceId">
+    delete from admin_base_role_resource where resource_id = #{resourceId,jdbcType=BIGINT}
+  </delete>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select role_id, resource_id
+    from admin_base_role_resource
+  </select>
+
+  <select id="selectByRoleId" resultMap="BaseResultMap">
+    select * from admin_base_role_resource where role_id = #{roleId,jdbcType=BIGINT}
+  </select>
+  <select id="selectConcatByRoleId" resultType="java.lang.String">
+    select GROUP_CONCAT(DISTINCT(resource_id)) from admin_base_role_resource where role_id = #{roleId,jdbcType=BIGINT}
+  </select>
+
+  <select id="selectConcatByRoleIds" resultType="java.lang.String">
+    select GROUP_CONCAT(DISTINCT(resource_id)) from admin_base_role_resource where role_id in
+    <foreach collection="roleIds" item="id" open="(" separator="," close=")">
+      #{id}
+    </foreach>
+  </select>
+
+  <select id="selectRoleIdsByResourceId" resultType="java.lang.String">
+    select GROUP_CONCAT(DISTINCT(role_id)) from admin_base_role_resource where resource_id = #{resourceId}
+  </select>
+
 </mapper>

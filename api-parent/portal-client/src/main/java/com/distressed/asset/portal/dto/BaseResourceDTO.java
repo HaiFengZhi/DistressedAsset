@@ -7,6 +7,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 后台权限数据列表
@@ -49,7 +50,7 @@ public class BaseResourceDTO implements Serializable {
     /**
      * 是否作为菜单显示？0不显示 1显示
      */
-    private Byte showOr;
+    private Boolean showOr;
 
     /**
      * 菜单排序值
@@ -59,12 +60,23 @@ public class BaseResourceDTO implements Serializable {
     /**
      * 是否为主权限，0=否，1=是
      */
-    private Byte mainPermissionsOr;
+    private Boolean mainPermissionsOr;
 
     /**
      * 是否激活，0-有效，-1-失效
      */
     private Integer status;
+
+    /**
+     * 子节点。
+     */
+    private List<BaseResourceDTO> children;
+
+    /**
+     * 是否默认选中
+     * true: 选中 false: 未选中
+     */
+    private Boolean checked;
 
     /**
      * admin_base_resource
@@ -171,7 +183,7 @@ public class BaseResourceDTO implements Serializable {
      * 是否作为菜单显示？0不显示 1显示
      * @return show_or 是否作为菜单显示？0不显示 1显示
      */
-    public Byte getShowOr() {
+    public Boolean getShowOr() {
         return showOr;
     }
 
@@ -179,7 +191,7 @@ public class BaseResourceDTO implements Serializable {
      * 是否作为菜单显示？0不显示 1显示
      * @param showOr 是否作为菜单显示？0不显示 1显示
      */
-    public void setShowOr(Byte showOr) {
+    public void setShowOr(Boolean showOr) {
         this.showOr = showOr;
     }
 
@@ -203,7 +215,7 @@ public class BaseResourceDTO implements Serializable {
      * 是否为主权限，0=否，1=是
      * @return main_permissions_or 是否为主权限，0=否，1=是
      */
-    public Byte getMainPermissionsOr() {
+    public Boolean getMainPermissionsOr() {
         return mainPermissionsOr;
     }
 
@@ -211,7 +223,7 @@ public class BaseResourceDTO implements Serializable {
      * 是否为主权限，0=否，1=是
      * @param mainPermissionsOr 是否为主权限，0=否，1=是
      */
-    public void setMainPermissionsOr(Byte mainPermissionsOr) {
+    public void setMainPermissionsOr(Boolean mainPermissionsOr) {
         this.mainPermissionsOr = mainPermissionsOr;
     }
 
@@ -229,6 +241,22 @@ public class BaseResourceDTO implements Serializable {
      */
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public List<BaseResourceDTO> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<BaseResourceDTO> children) {
+        this.children = children;
+    }
+
+    public Boolean getChecked() {
+        return checked;
+    }
+
+    public void setChecked(Boolean checked) {
+        this.checked = checked;
     }
 
     @Override

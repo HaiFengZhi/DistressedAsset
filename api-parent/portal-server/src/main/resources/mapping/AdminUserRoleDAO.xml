@@ -33,4 +33,32 @@
       </if>
     </trim>
   </insert>
+
+  <delete id="deleteByUserId">
+      delete from admin_admin_user_role where user_id = #{userId,jdbcType=BIGINT}
+    </delete>
+  <delete id="deleteByRoleId">
+     delete from admin_admin_user_role where role_id = #{roleId,jdbcType=BIGINT}
+  </delete>
+
+  <insert id="insertBatch">
+    INSERT INTO admin_admin_user_role (user_id, role_id) VALUES
+    <foreach collection="dataList" item="data" separator=",">
+      (#{data.userId},#{data.roleId})
+    </foreach>
+  </insert>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select user_id, role_id from admin_admin_user_role
+  </select>
+
+  <select id="selectConcatByUserId" resultType="java.lang.String">
+    select GROUP_CONCAT(DISTINCT(role_id)) from admin_admin_user_role where user_id = #{userId,jdbcType=BIGINT}
+  </select>
+
+  <select id="selectConcatByRoleId" resultType="java.lang.String">
+    select GROUP_CONCAT(DISTINCT(user_id)) from admin_admin_user_role where role_id = #{roleId,jdbcType=BIGINT}
+  </select>
+
+
 </mapper>
