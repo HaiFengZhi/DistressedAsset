@@ -13,7 +13,7 @@
 
 package com.distressed.asset.scheduler.jobhandler;
 
-import com.online.shop.api.service.DemoService;
+import com.distressed.asset.portal.service.DemoService;
 import com.xxl.job.core.biz.model.ReturnT;
 import com.xxl.job.core.handler.IJobHandler;
 import com.xxl.job.core.handler.annotation.JobHandler;

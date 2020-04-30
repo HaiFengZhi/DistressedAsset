@@ -13,14 +13,13 @@
     <packaging>pom</packaging>
     <description>
         对内提供的服务接口，分为以下模块：
-        api-common：模块内共用工具包、
         portal-client：普通业务可依赖jar包、
-        portal-service：普通业务实现接口、
-        fund-client：资金业务可依赖jar包、
-        fund-service：资金业务实现接口、
-        transaction-client：交易业务可依赖jar包、
-        transaction-service：交易业务实现接口。
+        portal-server：普通业务实现接口、
     </description>
+    <modules>
+        <module>portal-client</module>
+        <module>portal-server</module>
+    </modules>
 
     <dependencies>
         <!--Spring Boot Web组件-->

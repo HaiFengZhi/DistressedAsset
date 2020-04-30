@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.distressed.asset.portal.dao.AdminUserDAO">
+  <resultMap id="BaseResultMap" type="com.distressed.asset.portal.mapping.AdminUser">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="login_username" jdbcType="VARCHAR" property="loginUsername" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="security_password" jdbcType="VARCHAR" property="securityPassword" />
+    <result column="portrait" jdbcType="VARCHAR" property="portrait" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="last_login_time" jdbcType="TIMESTAMP" property="lastLoginTime" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="bound_cellphone" jdbcType="VARCHAR" property="boundCellphone" />
+    <result column="bound_email" jdbcType="VARCHAR" property="boundEmail" />
+    <result column="modify_pwd_or" jdbcType="INTEGER" property="modifyPwdOr" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, login_username, nickname, password, security_password, portrait, create_time, 
+    last_login_time, type, status, bound_cellphone, bound_email, modify_pwd_or
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from admin_admin_user
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from admin_admin_user
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.distressed.asset.portal.mapping.AdminUser">
+    insert into admin_admin_user (id, login_username, nickname, 
+      password, security_password, portrait, 
+      create_time, last_login_time, type, 
+      status, bound_cellphone, bound_email, 
+      modify_pwd_or)
+    values (#{id,jdbcType=BIGINT}, #{loginUsername,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{securityPassword,jdbcType=VARCHAR}, #{portrait,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{lastLoginTime,jdbcType=TIMESTAMP}, #{type,jdbcType=INTEGER}, 
+      #{status,jdbcType=TINYINT}, #{boundCellphone,jdbcType=VARCHAR}, #{boundEmail,jdbcType=VARCHAR}, 
+      #{modifyPwdOr,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.distressed.asset.portal.mapping.AdminUser">
+    insert into admin_admin_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="loginUsername != null">
+        login_username,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="securityPassword != null">
+        security_password,
+      </if>
+      <if test="portrait != null">
+        portrait,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="lastLoginTime != null">
+        last_login_time,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="boundCellphone != null">
+        bound_cellphone,
+      </if>
+      <if test="boundEmail != null">
+        bound_email,
+      </if>
+      <if test="modifyPwdOr != null">
+        modify_pwd_or,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="loginUsername != null">
+        #{loginUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="securityPassword != null">
+        #{securityPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="portrait != null">
+        #{portrait,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginTime != null">
+        #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="boundCellphone != null">
+        #{boundCellphone,jdbcType=VARCHAR},
+      </if>
+      <if test="boundEmail != null">
+        #{boundEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyPwdOr != null">
+        #{modifyPwdOr,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.distressed.asset.portal.mapping.AdminUser">
+    update admin_admin_user
+    <set>
+      <if test="loginUsername != null">
+        login_username = #{loginUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="securityPassword != null">
+        security_password = #{securityPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="portrait != null">
+        portrait = #{portrait,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginTime != null">
+        last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="boundCellphone != null">
+        bound_cellphone = #{boundCellphone,jdbcType=VARCHAR},
+      </if>
+      <if test="boundEmail != null">
+        bound_email = #{boundEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyPwdOr != null">
+        modify_pwd_or = #{modifyPwdOr,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.distressed.asset.portal.mapping.AdminUser">
+    update admin_admin_user
+    set login_username = #{loginUsername,jdbcType=VARCHAR},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      security_password = #{securityPassword,jdbcType=VARCHAR},
+      portrait = #{portrait,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+      type = #{type,jdbcType=INTEGER},
+      status = #{status,jdbcType=TINYINT},
+      bound_cellphone = #{boundCellphone,jdbcType=VARCHAR},
+      bound_email = #{boundEmail,jdbcType=VARCHAR},
+      modify_pwd_or = #{modifyPwdOr,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

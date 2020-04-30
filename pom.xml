@@ -33,6 +33,7 @@
         <module>scheduler-server</module>
         <module>gateway-server</module>
         <module>api-parent</module>
+        <module>zipkin-server</module>
     </modules>
 
     <properties>

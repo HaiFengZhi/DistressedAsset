@@ -1,10 +1,10 @@
-package com.distressed.asset.eureka;
+package com.distressed.asset.portal;
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EurekaServerApplicationTests {
+class PortalServerApplicationTests {
 
     @Test
     void contextLoads() {

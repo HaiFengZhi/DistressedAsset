@@ -13,8 +13,8 @@
 
 package com.distressed.asset.common.result;
 
-import com.online.shop.common.annotation.DecryptField;
-import com.online.shop.common.exception.ParameterException;
+import com.distressed.asset.common.annotation.DecryptField;
+import com.distressed.asset.common.exception.ParameterException;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 

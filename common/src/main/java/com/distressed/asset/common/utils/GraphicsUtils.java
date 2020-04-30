@@ -13,7 +13,7 @@
 
 package com.distressed.asset.common.utils;
 
-import com.online.shop.common.captcha.CaptchaUtil;
+import com.distressed.asset.common.captcha.CaptchaUtil;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpHeaders;

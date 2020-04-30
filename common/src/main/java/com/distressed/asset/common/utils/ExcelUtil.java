@@ -1,6 +1,6 @@
 package com.distressed.asset.common.utils;
 
-import com.online.shop.common.annotation.ExcelAttribute;
+import com.distressed.asset.common.annotation.ExcelAttribute;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellAddress;

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>api-parent</artifactId>
+        <groupId>com.distressed.asset</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>portal-server</artifactId>
+    <version>${os.version}</version>
+    <name>portal-server</name>
+    <description>普通数据库业务API接口实现服务</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+
+        <mysql.version>5.1.32</mysql.version>
+        <druid.version>1.1.17</druid.version>
+        <mybatis-springboot.version>1.3.2</mybatis-springboot.version>
+        <mapper.version>2.0.0</mapper.version>
+
+        <!-- 定义初始化文件根目录 -->
+        <targetJavaProject>src/main/java</targetJavaProject>
+        <!--  XML生成路径  -->
+        <targetResourcesProject>src/main/resources/</targetResourcesProject>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.distressed.asset</groupId>
+            <artifactId>portal-client</artifactId>
+            <version>${os.version}</version>
+        </dependency>
+
+        <!--Druid数据库连接池和监控。-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
+
+        <!-- spring boot对mybatis的支持 -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${mybatis-springboot.version}</version>
+        </dependency>
+
+        <!--mysql驱动，SpringCLoud默认的8.X的驱动，太高了，可能会引起问题，所以需要修改成5.x-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+
+        <!--mybatis mapper-->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+            <version>${mapper.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.persistence</groupId>
+                    <artifactId>persistence-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- 自动创建实体类和Dao接口. -->
+        <dependency>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator-core</artifactId>
+            <version>1.3.5</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+
+
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!--  MyBatis代码生成器插件  -->
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.5</version>
+                <configuration>
+                    <configurationFile>src/main/resources/generator/generatorConfig.xml</configurationFile>
+                    <overwrite>true</overwrite>
+                    <verbose>true</verbose>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>5.1.39</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>tk.mybatis</groupId>
+                        <artifactId>mapper-spring-boot-starter</artifactId>
+                        <version>${mapper.version}</version>
+                        <exclusions>
+                            <exclusion>
+                                <groupId>javax.persistence</groupId>
+                                <artifactId>persistence-api</artifactId>
+                            </exclusion>
+                        </exclusions>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <!--  MyBatis代码生成器插件  -->
+        </plugins>
+    </build>
+
+
+
+</project>

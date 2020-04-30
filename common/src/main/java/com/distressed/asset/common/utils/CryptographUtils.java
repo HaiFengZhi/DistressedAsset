@@ -13,7 +13,7 @@
 
 package com.distressed.asset.common.utils;
 
-import com.online.shop.common.exception.ParameterException;
+import com.distressed.asset.common.exception.ParameterException;
 import org.apache.commons.io.Charsets;
 
 import javax.crypto.*;

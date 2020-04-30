@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.distressed.asset.portal.dao.BaseRoleResourceDAO">
+  <resultMap id="BaseResultMap" type="com.distressed.asset.portal.mapping.BaseRoleResource">
+    <id column="role_id" jdbcType="BIGINT" property="roleId" />
+    <id column="resource_id" jdbcType="BIGINT" property="resourceId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="com.distressed.asset.portal.mapping.BaseRoleResource">
+    delete from admin_base_role_resource
+    where role_id = #{roleId,jdbcType=BIGINT}
+      and resource_id = #{resourceId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.distressed.asset.portal.mapping.BaseRoleResource">
+    insert into admin_base_role_resource (role_id, resource_id)
+    values (#{roleId,jdbcType=BIGINT}, #{resourceId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.distressed.asset.portal.mapping.BaseRoleResource">
+    insert into admin_base_role_resource
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roleId != null">
+        role_id,
+      </if>
+      <if test="resourceId != null">
+        resource_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="roleId != null">
+        #{roleId,jdbcType=BIGINT},
+      </if>
+      <if test="resourceId != null">
+        #{resourceId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>
