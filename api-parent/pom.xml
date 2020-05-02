@@ -19,6 +19,7 @@
     <modules>
         <module>portal-client</module>
         <module>portal-server</module>
+        <module>rocketmq-client</module>
     </modules>
 
     <dependencies>

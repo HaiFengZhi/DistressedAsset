@@ -14,6 +14,10 @@
     <version>${os.version}</version>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>admin</module>
+    </modules>
+
     <dependencies>
         <!--Spring Boot Web组件-->
         <dependency>
