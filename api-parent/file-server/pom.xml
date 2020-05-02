@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>api-parent</artifactId>
+        <groupId>com.distressed.asset</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>file-server</artifactId>
+    <version>${os.version}</version>
+    <name>file-server</name>
+    <description>文件管理系统实现方法，并存储文件在本服务器</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.distressed.asset</groupId>
+            <artifactId>portal-client</artifactId>
+            <version>${os.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.distressed.asset</groupId>
+            <artifactId>file-client</artifactId>
+            <version>${os.version}</version>
+        </dependency>
+
+        <!--  引入文件feign文件上传依赖，特么别被网上的3.3.0或是3.0.3坑了 -->
+        <dependency>
+            <groupId>io.github.openfeign.form</groupId>
+            <artifactId>feign-form</artifactId>
+            <version>3.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.openfeign.form</groupId>
+            <artifactId>feign-form-spring</artifactId>
+            <version>3.8.0</version>
+        </dependency>
+
+    </dependencies>
+
+
+
+</project>

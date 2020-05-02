@@ -20,6 +20,9 @@
         <module>portal-client</module>
         <module>portal-server</module>
         <module>rocketmq-client</module>
+        <module>rocketmq-server</module>
+        <module>file-client</module>
+        <module>file-server</module>
     </modules>
 
     <dependencies>
