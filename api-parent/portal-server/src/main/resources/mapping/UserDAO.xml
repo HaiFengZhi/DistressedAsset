@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.distressed.asset.portal.dao.UserDAO">
+  <resultMap id="BaseResultMap" type="com.distressed.asset.portal.mapping.User">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="login_username" jdbcType="VARCHAR" property="loginUsername" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="portrait" jdbcType="VARCHAR" property="portrait" />
+    <result column="bound_cellphone" jdbcType="VARCHAR" property="boundCellphone" />
+    <result column="bound_email" jdbcType="VARCHAR" property="boundEmail" />
+    <result column="wechat_key" jdbcType="VARCHAR" property="wechatKey" />
+    <result column="share_code" jdbcType="VARCHAR" property="shareCode" />
+    <result column="registered_time" jdbcType="TIMESTAMP" property="registeredTime" />
+    <result column="last_login_time" jdbcType="TIMESTAMP" property="lastLoginTime" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="vip_start_date" jdbcType="DATE" property="vipStartDate" />
+    <result column="vip_end_date" jdbcType="DATE" property="vipEndDate" />
+    <result column="vip_status" jdbcType="INTEGER" property="vipStatus" />
+    <result column="signature" jdbcType="VARCHAR" property="signature" />
+    <result column="user_type" jdbcType="INTEGER" property="userType" />
+    <result column="recommend_code" jdbcType="VARCHAR" property="recommendCode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from uc_user where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.distressed.asset.portal.mapping.User" keyProperty="id" useGeneratedKeys="true">
+    insert into uc_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="loginUsername != null">
+        login_username,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="portrait != null">
+        portrait,
+      </if>
+      <if test="boundCellphone != null">
+        bound_cellphone,
+      </if>
+      <if test="boundEmail != null">
+        bound_email,
+      </if>
+      <if test="wechatKey != null">
+        wechat_key,
+      </if>
+      <if test="shareCode != null">
+        share_code,
+      </if>
+      <if test="registeredTime != null">
+        registered_time,
+      </if>
+      <if test="lastLoginTime != null">
+        last_login_time,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="vipStartDate != null">
+        vip_start_date,
+      </if>
+      <if test="vipEndDate != null">
+        vip_end_date,
+      </if>
+      <if test="vipStatus != null">
+        vip_status,
+      </if>
+      <if test="signature != null">
+        signature,
+      </if>
+      <if test="userType != null">
+        user_type,
+      </if>
+      <if test="recommendCode != null">
+        recommend_code,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="loginUsername != null">
+        #{loginUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="portrait != null">
+        #{portrait,jdbcType=VARCHAR},
+      </if>
+      <if test="boundCellphone != null">
+        #{boundCellphone,jdbcType=VARCHAR},
+      </if>
+      <if test="boundEmail != null">
+        #{boundEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="wechatKey != null">
+        #{wechatKey,jdbcType=VARCHAR},
+      </if>
+      <if test="shareCode != null">
+        #{shareCode,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredTime != null">
+        #{registeredTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginTime != null">
+        #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="vipStartDate != null">
+        #{vipStartDate,jdbcType=DATE},
+      </if>
+      <if test="vipEndDate != null">
+        #{vipEndDate,jdbcType=DATE},
+      </if>
+      <if test="vipStatus != null">
+        #{vipStatus,jdbcType=INTEGER},
+      </if>
+      <if test="signature != null">
+        #{signature,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null">
+        #{userType,jdbcType=INTEGER},
+      </if>
+      <if test="recommendCode != null">
+        #{recommendCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.distressed.asset.portal.mapping.User">
+    update uc_user
+    <set>
+      <if test="loginUsername != null">
+        login_username = #{loginUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="portrait != null">
+        portrait = #{portrait,jdbcType=VARCHAR},
+      </if>
+      <if test="boundCellphone != null">
+        bound_cellphone = #{boundCellphone,jdbcType=VARCHAR},
+      </if>
+      <if test="boundEmail != null">
+        bound_email = #{boundEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="wechatKey != null">
+        wechat_key = #{wechatKey,jdbcType=VARCHAR},
+      </if>
+      <if test="shareCode != null">
+        share_code = #{shareCode,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredTime != null">
+        registered_time = #{registeredTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginTime != null">
+        last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="vipStartDate != null">
+        vip_start_date = #{vipStartDate,jdbcType=DATE},
+      </if>
+      <if test="vipEndDate != null">
+        vip_end_date = #{vipEndDate,jdbcType=DATE},
+      </if>
+      <if test="vipStatus != null">
+        vip_status = #{vipStatus,jdbcType=INTEGER},
+      </if>
+      <if test="signature != null">
+        signature = #{signature,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null">
+        user_type = #{userType,jdbcType=INTEGER},
+      </if>
+      <if test="recommendCode != null">
+        recommend_code = #{recommendCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, login_username, nickname, password, portrait, bound_cellphone, bound_email, 
+    wechat_key, share_code, registered_time, last_login_time, type, vip_start_date, vip_end_date, 
+    vip_status, signature, user_type, recommend_code, status
+    from uc_user
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, login_username, nickname, password, portrait, bound_cellphone, bound_email, 
+    wechat_key, share_code, registered_time, last_login_time, type, vip_start_date, vip_end_date, 
+    vip_status, signature, user_type, recommend_code, status
+    from uc_user
+  </select>
+
+  <select id="selectBy"  resultMap="BaseResultMap" parameterType="map">
+    select id, login_username, nickname, password, portrait, bound_cellphone, bound_email,
+    wechat_key, share_code, registered_time, last_login_time, type, vip_start_date, vip_end_date,
+    vip_status, signature, user_type, recommend_code, status
+    from uc_user
+    where status=0
+    <if test="params!=null and params.loginUsername != null">
+      AND login_username=  #{params.loginUsername}
+    </if>
+    <if test="params!=null and params.nickname != null">
+      AND nickname=  #{params.nickname}
+    </if>
+    <if test="params!=null and params.boundCellphone != null">
+      AND bound_cellphone=  #{params.boundCellphone}
+    </if>
+    ORDER BY registered_time DESC
+  </select>
+
+  <select id="selectById" parameterType="java.lang.Long" resultType="java.util.Map">
+   select ou.login_username as loginUserName,ou.nickname as nickname,ou.portrait as portrait,
+     ou.bound_cellphone as boundCellphone,ou.bound_email as boundEmail,ou.wechat_key as wechatKey,
+     ou.share_code as shareCode,DATE_FORMAT(ou.registered_time,'%Y-%m-%d %H:%i:%S') as registeredTime,DATE_FORMAT(ou.last_login_time,'%Y-%m-%d %H:%i:%S') as lastLoginTime,
+     CASE ou.type WHEN 0 THEN '普通用户' ELSE 'VIP会员' END type,ou.vip_start_date as vipStartDate,ou.vip_end_date as vipEndDate,
+     CASE ou.vip_status WHEN 0 THEN '失效' ELSE '有效' END vipStatus,ou.signature as signature,
+     CASE ou.user_type WHEN 0 THEN '个人用户' ELSE '企业用户' END  userType,ou.status as status,oa.amount as amount,
+     oa.frozen_amount as frozenAmount,oa.total_amount as totalAmount,DATE_FORMAT(oa.last_modified_time,'%Y-%m-%d %H:%i:%S') as amountLastLoginTime,
+     CONCAT(IFNULL(oad.province_name,''),IFNULL(oad.city_name,''),IFNULL(oad.district_name,''),oad.user_adress) as adress,
+     obc.bank_name as bankName,obc.bank_account as bankAccount,oc.coin as coin,oc.frozen_coin as frozenCoin,
+     oc.total_coin as totalCoin,DATE_FORMAT(oc.last_modified_time,'%Y-%m-%d %H:%i:%S') as coinLastLoginTime,os.score_amount as scoreAmount,
+     os.total_score as totalScore,os.frozen_score AS frozenScore,os.score_level as scoreLevel,DATE_FORMAT(os.update_time,'%Y-%m-%d %H:%i:%S') as updateTime
+     from uc_user ou
+     LEFT JOIN os_account oa ON oa.user_id=ou.id
+     LEFT JOIN os_address oad ON oad.user_id=ou.id AND oad.is_default=1
+     LEFT JOIN os_bank_card obc on obc.user_id=ou.id AND obc.default_or=1
+     LEFT JOIN os_coin oc ON oc.user_id=ou.id
+     LEFT JOIN os_score os ON os.user_id=ou.id
+   where ou.id=#{id,jdbcType=BIGINT}
+  </select>
+
+  <select id="selectCountByUserName"  resultType="java.lang.Integer">
+    select  count(*)
+    from uc_user
+    where status=0  and login_username=#{loginUsername,jdbcType=VARCHAR}
+    <if test="id != null">
+      and id != #{id,jdbcType=BIGINT}
+    </if>
+  </select>
+</mapper>

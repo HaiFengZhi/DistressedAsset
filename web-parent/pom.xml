@@ -16,6 +16,7 @@
 
     <modules>
         <module>admin</module>
+        <module>portal-web</module>
     </modules>
 
     <dependencies>

@@ -104,6 +104,31 @@ UNIQUE KEY `idx_attachment_uuid` (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='附件是系统中公共的数据结构，可以和其他需要附件的数据结构进行泛化关联(any)。';
 
 
+DROP TABLE IF EXISTS `uc_user`;
+CREATE TABLE `uc_user` (
+	`id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '用户id',
+	`login_username` varchar(64) NOT NULL COMMENT '用户名',
+	`nickname` varchar(64) NOT NULL DEFAULT '' COMMENT '昵称',
+	`password` varchar(64) DEFAULT NULL COMMENT '登陆密码',
+	`portrait` varchar(248) DEFAULT NULL COMMENT '用户头像',
+	`bound_cellphone` varchar(128) NOT NULL DEFAULT '' COMMENT '绑定手机号码',
+	`bound_email` varchar(128) NOT NULL DEFAULT '' COMMENT '绑定邮箱',
+	`wechat_key` varchar(128) NOT NULL DEFAULT '' COMMENT '绑定微信唯一openId',
+	`share_code` varchar(64) NOT NULL DEFAULT '' COMMENT '个人邀请码',
+	`registered_time` datetime DEFAULT NULL COMMENT '注册时间',
+	`last_login_time` datetime DEFAULT NULL COMMENT '最后登陆时间',
+	`type` int(11) DEFAULT NULL COMMENT '用户类型【0：普通会员，1：VIP会员】',
+	`vip_start_date` date DEFAULT NULL COMMENT 'VIP开始时间',
+	`vip_end_date` date DEFAULT NULL COMMENT 'VIP结束时间',
+	`vip_status` int(11) DEFAULT NULL COMMENT 'VIP状态【1：有效，0：失效】',
+	`signature` varchar(256) DEFAULT NULL COMMENT '个性签名',
+	`user_type` int(11) DEFAULT '0' COMMENT '0个人用户,1企业用户',
+	`recommend_code` varchar(64) DEFAULT NULL COMMENT '推荐人邀请码',
+	`status` int(11) NOT NULL COMMENT '状态',
+	PRIMARY KEY (`id`),
+	UNIQUE KEY `UQ_user_name_phone_email_wechat` (`login_username`,`nickname`,`bound_cellphone`,
+	    `bound_email`,`wechat_key`,`share_code`,`status`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户信息表';
 
 
 
