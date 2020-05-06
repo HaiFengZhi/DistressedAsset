@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>common</artifactId>
-    <version>${os.version}</version>
+    <version>${da.version}</version>
     <packaging>jar</packaging>
     <description>全站公用工具包(与业务分离为主)</description>
 

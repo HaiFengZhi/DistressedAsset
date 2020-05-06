@@ -8,7 +8,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>rocketmq-server</artifactId>
-    <version>${os.version}</version>
+    <version>${da.version}</version>
     <name>rocketmq-server</name>
     <description>RocketMQ 服务端方法</description>
 
@@ -20,7 +20,7 @@
         <dependency>
             <groupId>com.distressed.asset</groupId>
             <artifactId>rocketmq-client</artifactId>
-            <version>${os.version}</version>
+            <version>${da.version}</version>
         </dependency>
 
     </dependencies>

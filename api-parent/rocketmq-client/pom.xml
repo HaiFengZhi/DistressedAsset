@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>rocketmq-client</artifactId>
-    <version>${os.version}</version>
+    <version>${da.version}</version>
     <name>rocketmq-client</name>
     <description>RocketMQ 客户端引用包</description>
 
@@ -23,7 +23,7 @@
         <dependency>
             <groupId>com.distressed.asset</groupId>
             <artifactId>common</artifactId>
-            <version>${os.version}</version>
+            <version>${da.version}</version>
         </dependency>
 
         <!-- 集成RocketMQ，两者取其一即可 -->

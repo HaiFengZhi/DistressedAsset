@@ -39,7 +39,7 @@
 
     <properties>
         <!--开发阶段以-SNAPSHOT为后缀，版本稳定后去掉后缀-->
-        <os.version>1.0-SNAPSHOT</os.version>
+        <da.version>1.0-SNAPSHOT</da.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>

@@ -8,7 +8,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>portal-web</artifactId>
-    <version>${os.version}</version>
+    <version>${da.version}</version>
     <name>portal-web</name>
     <description>前端公共模块</description>
 
@@ -78,7 +78,7 @@
         <dependency>
             <groupId>com.distressed.asset</groupId>
             <artifactId>portal-client</artifactId>
-            <version>${os.version}</version>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
 
     </dependencies>

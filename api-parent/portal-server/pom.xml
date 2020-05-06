@@ -8,7 +8,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>portal-server</artifactId>
-    <version>${os.version}</version>
+    <version>${da.version}</version>
     <name>portal-server</name>
     <description>普通数据库业务API接口实现服务</description>
 
@@ -30,7 +30,7 @@
         <dependency>
             <groupId>com.distressed.asset</groupId>
             <artifactId>portal-client</artifactId>
-            <version>${os.version}</version>
+            <version>${da.version}</version>
         </dependency>
 
         <!--Druid数据库连接池和监控。-->

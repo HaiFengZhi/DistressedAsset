@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
  * @version 1.0
  * @date 2019-11-14 21:52
  */
-@FeignClient(value = "file-manager-service", contextId = "fileManagerApi", fallback = FileManagerApiHystrixImpl.class,
+@FeignClient(value = "file-server", contextId = "fileManagerApi", fallback = FileManagerApiHystrixImpl.class,
         configuration = FeignMultipartSupportConfig.class)
 public interface FileManagerApi {
 
