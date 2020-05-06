@@ -392,7 +392,7 @@ public final class DESedeUtils {
     }
 
     public static void main(String[] args) throws Exception {
-        String data = "OnlineShop-web";
+        String data = "distress-admin";
         String entry = encryptBasedDes(data);
         String decrypt = decryptBasedDes(entry);
         System.out.println("加密前：" + data);
