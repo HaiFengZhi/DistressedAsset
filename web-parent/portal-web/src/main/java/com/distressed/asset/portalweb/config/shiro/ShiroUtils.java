@@ -54,6 +54,8 @@ public class ShiroUtils {
 //        filterChainDefinitionMap.put("/static/layui/**", "anon");
 //        filterChainDefinitionMap.put("/static/layui/css/**", "anon");
         //配置退出 过滤器,其中的具体的退出代码Shiro已经替我们实现了，会自动清除相关缓存
+        filterChainDefinitionMap.put("/index", "anon");
+        filterChainDefinitionMap.put("/", "anon");
         filterChainDefinitionMap.put("/logout", "logout");
         filterChainDefinitionMap.put("/login", "anon");
 

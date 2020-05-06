@@ -32,6 +32,7 @@ public class MeshsiteFilter extends ConfigurableSiteMeshFilter {
                 .addExcludedPath("/static/**")
                 //以下请求不使用模板
                 .addExcludedPath("/white/list")
+                .addExcludedPath("/index")
                 //自定义标签
                 //.addTagRuleBundle(new MyTagRuleBundle())
         ;
