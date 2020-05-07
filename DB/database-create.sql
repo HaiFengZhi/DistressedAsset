@@ -2,13 +2,13 @@
 CREATE database if NOT EXISTS `distressed_asset` default character set utf8 collate utf8_general_ci;
 use `distressed_asset`;
 
--- 数据库建表前缀遵循以下命名规则：
--- 后台专用表以  admin_开始，如 admin_base_resource等
+-- 后台专用表以  adm_开始，如 adm_base_resource等
 -- 论坛专用表以  bbs_开始，如 bbs_circle等
--- 支付相关表以  uac_开始 uac_account等
+-- 支付相关表以  uac_开始，如 uac_account等
 -- 用户相关表以  uc_开始，如 uc_user等
 -- 消息相关表以  mc_开始，如 mc_message等
--- 公用相关表以  t_开始，如 t_area等
+-- 公用相关表以  com_开始，如 com_area等
+-- 资产债转服务表以  tc_开始，如 tc_subject等
 -- 其它特殊表待定；
 
 -- 创建后台鉴权表
