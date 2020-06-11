@@ -17,7 +17,7 @@
     <properties>
         <version.commons.lang3>3.8</version.commons.lang3>
         <version.commons.codec>1.7</version.commons.codec>
-        <version.commons.beanutils>1.8.3</version.commons.beanutils>
+        <version.commons.beanutils>1.9.2</version.commons.beanutils>
         <version.commons.io>2.4</version.commons.io>
         <version.servlet>3.0.1</version.servlet>
         <version.javax.servlet.jsp>2.1</version.javax.servlet.jsp>
